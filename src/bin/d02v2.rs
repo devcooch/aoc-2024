@@ -10,8 +10,15 @@ fn is_safe(v: &[i32]) -> bool {
 
 fn is_safe_dampened(v: &[i32]) -> bool {
     is_safe(v)
-        || (0..v.len())
-            .any(|i| is_safe(&v.iter().take(i).chain(v.iter().skip(i + 1)).cloned().collect::<Vec<_>>()))
+        || (0..v.len()).any(|i| {
+            is_safe(
+                &v.iter()
+                    .take(i)
+                    .chain(v.iter().skip(i + 1))
+                    .cloned()
+                    .collect::<Vec<_>>(),
+            )
+        })
 }
 
 fn main() {
