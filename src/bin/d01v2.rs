@@ -20,7 +20,7 @@ fn main() {
     println!(
         "{}",
         v1.iter()
-            .map(|x| x * v2.get(x).or(Some(&0i32)).unwrap())
+            .map(|x| x * v2.get(x).unwrap_or(&0i32))
             .sum::<i32>()
     );
 }
