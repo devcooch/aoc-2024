@@ -3,7 +3,7 @@ name = "dima-advent-of-code-2024"
 version = "1.0.0"
 authors = ["Dmitry Kochkin <cooch@mail.ru>"]
 edition = "2021"
-default-run = "d04v1"
+default-run = "d04v2"
 
 [dependencies]
 itertools = "0.13.0"
